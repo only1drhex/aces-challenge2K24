@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{}</title>
+    
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+    /* Apply IBM Plex font family */
+    *, body, div,p {
+      font-family: "IBM Plex Mono", monospace;
+    }
+    input[type="text"] {
+      font-family: "IBM Plex Mono", monospace !important;
+      background-color: #F3F8FB;
+      color: #00474B;
+      font-weight: 800;
+      font-size: 45px;
+
+    }
+
+    /* Apply IBM Plex font family to placeholders */
+    ::placeholder {
+      font-family: "IBM Plex Mono", monospace !important;
+
+    }
+    </style>
+</head>
+<body class="bg-[#C4E4E7]">
+    <!-- Image box -->
+    <div class="relative">
+        
+        <div class="flex items-center justify-center">
+          <img src="./images/logo.svg" alt="Logo" class="h-10 w-auto mt-16">
+        </div>
+        <!-- card container -->
+        <div class="container mx-auto flex flex-wrap mt-14 justify-between p-4 bg-white items-center rounded-[20px]">
+          <!-- left -->
+            <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 mr-4">
+                <p class="text-[#667274] text-sm font-bold ">Bill</p>
+                <!-- formbox -->
+                <form class="mt-6  group relative">
+                    <svg width="20" height="20" fill="currentColor" class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-[#26C2AD]" aria-hidden="true"
+                        viewBox="0 0 16 16"> <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                      </svg>
+                    <input id="billAmount" class="focus:ring-[#26C2AD] focus:outline-none appearance-none text-sm leading-6 placeholder-slate-200 border border-transparent rounded-md py-2 pl-10 ring-1 ring-slate-200 w-96 text-right" type="text" aria-label="Amount" placeholder="">
+   
+                </form>
+                <!-- grid box select -->
+                <h1 class="text-base mt-6 font-bold text-[#586566]">Select Tip %</h1>
+
+                <div class="mt-6 container mx-auto">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-32 gap-y-10">
+                      <!-- Box 1 -->
+                      <div id="5per" data-percent="5" onclick="" class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">5%</div>
+                      <!-- Box 2 -->
+                      <div id="10per"  data-percent="10" onclick="" class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">10%</div>
+                      <!-- Box 3 -->
+                      <div id="15per" data-percent="15" onclick="" class="percentage-button  flex p-4 bg-[#26C2AD] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-[#004A4C]">15%</div>
+                      <!-- Box 4 -->
+                      <div id="25per" onclick="" data-percent="25"
+                       class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">25%</div>
+                      <!-- Box 5 -->
+                      <div id="50per" onclick="" data-percent="50" class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">50%</div>
+                      <!-- Box 6 -->
+                      <div id="custom" onclick="" class="percentage-button flex p-4 bg-[#F3F8FB] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-[#577572]">Custom</div>
+
+                    </div>
+                    <form class="mt-6  group relative">
+                      <svg width="20" height="20" fill="currentColor" class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-[#26C2AD]" aria-hidden="true"
+                      viewBox="0 0 24 24" fill="#ccc" xmlns="http://www.w3.org/2000/svg"> <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/> <path d="M15.5 16C15.7761 16 16 15.7761 16 15.5C16 15.2239 15.7761 15 15.5 15C15.2239 15 15 15.2239 15 15.5C15 15.7761 15.2239 16 15.5 16Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/> <path d="M8.5 9C8.77614 9 9 8.77614 9 8.5C9 8.22386 8.77614 8 8.5 8C8.22386 8 8 8.22386 8 8.5C8 8.77614 8.22386 9 8.5 9Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/> <path d="M16 8L8 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      <input id="custompercent" class="focus:ring-[#26C2AD] focus:outline-none appearance-none text-sm leading-6 placeholder-slate-200 border border-transparent rounded-md py-2 pl-10 ring-1 ring-slate-200 w-96 text-right" type="text" aria-label="Amount" placeholder="">
+     
+                  </form>
+                  </div>
+                  <!-- PEOPLE -->
+                 <h1 class="text-base mt-6 font-bold text-[#586566]">Number of people</h1>
+                 <!-- form -->
+                 <form class="mt-6  group relative">
+                    <svg width="20" height="20" fill="currentColor" class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-[#26C2AD]" aria-hidden="true"
+                        viewBox="0 0 16 16"> <path fill="#9EBBBD" d="M9.573 7.729c.406 0 .784.07 1.126.209.342.14.639.33.881.569.232.227.438.503.614.82a5.1 5.1 0 01.407.949c.097.312.178.654.242 1.016.062.359.105.699.126 1.011.02.307.031.624.031.945 0 .836-.259 1.512-.768 2.01-.504.492-1.17.742-1.98.742H2.748c-.81 0-1.477-.25-1.98-.742C.259 14.76 0 14.084 0 13.248c0-.322.01-.64.032-.945.02-.312.063-.652.126-1.01.063-.363.144-.705.242-1.017.1-.323.238-.643.407-.948.176-.318.382-.594.613-.821.243-.238.54-.43.882-.57.342-.138.72-.208 1.125-.208.16 0 .313.067.61.265.183.123.397.264.636.421.204.134.48.259.822.372.333.11.671.167 1.005.167a3.19 3.19 0 001.006-.167c.341-.113.618-.238.822-.372l.636-.42c.296-.2.45-.266.61-.266zM6.598 0C7.63 0 8.522.38 9.252 1.129s1.1 1.666 1.1 2.724c0 1.06-.37 1.976-1.1 2.725-.73.75-1.623 1.13-2.654 1.13-1.03 0-1.924-.38-2.653-1.13-.73-.749-1.1-1.666-1.1-2.725 0-1.058.37-1.975 1.1-2.724C4.675.379 5.567 0 6.598 0z"/>
+                      </svg>
+                    <input id="numberOfPeople" class="focus:ring-[#26C2AD] focus:outline-none appearance-none text-sm leading-6 placeholder-slate-200 border border-transparent rounded-md py-2 pl-10 ring-1 ring-slate-200 w-96 text-right" type="text" aria-label="Amount" placeholder="">
+   
+                </form>
+
+                  
+            </div>
+            <!-- right -->
+          <div class="sm:w-1/2 md:w-1/3 lg:w-1/4 h-[34em] p-4 mr-4 bg-[#00474B] rounded-lg ">
+
+            <div class="mt-6 flex flex-1 items-center justify-between gap-10" >
+                <div class="flex-col"><div class="whitespace-nowrap text-white font-semibold text-lg">Tip Amount</div> <div class="text-sm text-slate-400 ">/ person</div></div>
+                <div  ><span id="tipAmount" class="text-[#28C1AD] font-bold text-[40px]">$0.00</div>
+            </div>
+
+            <div class="mt-8 flex flex-1 items-center justify-between gap-10" >
+                <div class="flex-col"><div class="whitespace-nowrap text-white font-semibold text-lg">Total</div> <div class="text-sm text-slate-400 ">/ person</div></div>
+                <div><span id="totalAmount" class="text-[#28C1AD] font-bold text-[40px]">$0.00</span></div>
+            </div>
+           
+            <div id="resetButton" class="mt-[16rem] flex items-center justify-center bg-[#26c2ad] hover:bg-[#3c5c57] hover:text-slate-300 p-4 rounded-md text-lg font-bold uppercase text-[#004144]">RESET</div>
+          </div>
+       
+        </div>
+      </div>
+      
+    
+      
+<script src="./script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const billAmountInput = document.getElementById('billAmount');
+      const customPercentInput = document.getElementById('custompercent');
+      const numberOfPeopleInput = document.getElementById('numberOfPeople');
+      const tipAmountDisplay = document.getElementById('tipAmount');
+      const totalAmountDisplay = document.getElementById('totalAmount');
+      const resetButton = document.getElementById('resetButton');
+
+      const percentageButtons = document.querySelectorAll('.percentage-button');
+
+        // Add event listeners to percentage buttons
+        percentageButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                customPercentInput.value = button.dataset.percent;
+                calculate();
+            });
+        });
+
+
+      // Add event listeners to inputs
+      billAmountInput.addEventListener('input', calculate);
+      customPercentInput.addEventListener('input', calculate);
+      numberOfPeopleInput.addEventListener('input', calculate);
+
+      // Calculate function
+      function calculate() {
+          const billAmount = parseFloat(billAmountInput.value);
+          const customPercent = parseFloat(customPercentInput.value) || 0;
+          const numberOfPeople = parseInt(numberOfPeopleInput.value) || 1;
+
+          // Calculate tip amount
+          const tipAmount = (billAmount * customPercent) / 100 / numberOfPeople;
+          // Calculate total amount
+          const totalAmount = (billAmount / numberOfPeople) + tipAmount;
+
+          // Display calculated amounts
+          tipAmountDisplay.textContent = '$' + tipAmount.toFixed(2);
+          totalAmountDisplay.textContent = '$' + totalAmount.toFixed(2);
+      }
+
+      // Reset button functionality
+      resetButton.addEventListener('click', function() {
+          billAmountInput.value = '';
+          customPercentInput.value = '';
+          numberOfPeopleInput.value = '';
+          tipAmountDisplay.textContent = '$0.00';
+          totalAmountDisplay.textContent = '$0.00';
+      });
+  });
+</script>
+</body>
+</html>
