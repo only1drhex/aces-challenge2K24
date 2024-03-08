@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{}</title>
+    <title>ACES UNIBEN 2024 cHALLENGE  </title>
     
     <link href="./output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,25 +56,25 @@
                 <div class="mt-6 container mx-auto">
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-x-32 gap-y-10">
                       <!-- Box 1 -->
-                      <div id="5per" data-percent="5" onclick="" class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">5%</div>
+                      <div id="5per" data-percent="5"  class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">5%</div>
                       <!-- Box 2 -->
-                      <div id="10per"  data-percent="10" onclick="" class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">10%</div>
+                      <div id="10per"  data-percent="10"  class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">10%</div>
                       <!-- Box 3 -->
-                      <div id="15per" data-percent="15" onclick="" class="percentage-button  flex p-4 bg-[#26C2AD] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-[#004A4C]">15%</div>
+                      <div id="15per" data-percent="15"  class="percentage-button  flex p-4 bg-[#26C2AD] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-[#004A4C]">15%</div>
                       <!-- Box 4 -->
-                      <div id="25per" onclick="" data-percent="25"
+                      <div id="25per"  data-percent="25"
                        class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">25%</div>
                       <!-- Box 5 -->
-                      <div id="50per" onclick="" data-percent="50" class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">50%</div>
+                      <div id="50per"  data-percent="50" class="percentage-button flex p-4 bg-[#00474B] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-white">50%</div>
                       <!-- Box 6 -->
-                      <div id="custom" onclick="" class="percentage-button flex p-4 bg-[#F3F8FB] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-[#577572]">Custom</div>
+                      <div id="custom"  class="percentage-button flex p-4 bg-[#F3F8FB] px-14 text-center items-center justify-center rounded-md font-semibold text-lg text-[#577572]">Custom</div>
 
                     </div>
                     <form class="mt-6  group relative">
                       <svg width="20" height="20" fill="currentColor" class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-[#26C2AD]" aria-hidden="true"
                       viewBox="0 0 24 24" fill="#ccc" xmlns="http://www.w3.org/2000/svg"> <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/> <path d="M15.5 16C15.7761 16 16 15.7761 16 15.5C16 15.2239 15.7761 15 15.5 15C15.2239 15 15 15.2239 15 15.5C15 15.7761 15.2239 16 15.5 16Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/> <path d="M8.5 9C8.77614 9 9 8.77614 9 8.5C9 8.22386 8.77614 8 8.5 8C8.22386 8 8 8.22386 8 8.5C8 8.77614 8.22386 9 8.5 9Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/> <path d="M16 8L8 16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                      <input id="custompercent" class="focus:ring-[#26C2AD] focus:outline-none appearance-none text-sm leading-6 placeholder-slate-200 border border-transparent rounded-md py-2 pl-10 ring-1 ring-slate-200 w-96 text-right" type="text" aria-label="Amount" placeholder="">
+                      <input id="custompercent" class="focus:ring-[#26C2AD] focus:outline-none appearance-none text-sm leading-6 md:w-96 sm:12 placeholder-slate-200 border border-transparent rounded-md py-2 pl-10 ring-1 ring-slate-200 text-right" type="text" aria-label="Amount" placeholder="">
      
                   </form>
                   </div>
@@ -134,6 +134,9 @@
 
 
       // Add event listeners to inputs
+
+        
+
       billAmountInput.addEventListener('input', calculate);
       customPercentInput.addEventListener('input', calculate);
       numberOfPeopleInput.addEventListener('input', calculate);
@@ -145,6 +148,9 @@
           const numberOfPeople = parseInt(numberOfPeopleInput.value) || 1;
 
           // Calculate tip amount
+
+
+          if(billAmount && customPercent && numberOfPeople ){
           const tipAmount = (billAmount * customPercent) / 100 / numberOfPeople;
           // Calculate total amount
           const totalAmount = (billAmount / numberOfPeople) + tipAmount;
@@ -152,6 +158,10 @@
           // Display calculated amounts
           tipAmountDisplay.textContent = '$' + tipAmount.toFixed(2);
           totalAmountDisplay.textContent = '$' + totalAmount.toFixed(2);
+
+          }
+
+
       }
 
       // Reset button functionality
